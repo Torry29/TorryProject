@@ -57,5 +57,6 @@ public class MQDemo implements RabbitTemplate.ConfirmCallback,RabbitTemplate.Ret
     @Override
     public void returnedMessage(ReturnedMessage returnedMessage) {
         log.error("回退消息{}",returnedMessage);
+		//20230412
     }
 }
