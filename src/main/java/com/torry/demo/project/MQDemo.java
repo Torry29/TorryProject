@@ -40,7 +40,7 @@ public class MQDemo implements RabbitTemplate.ConfirmCallback,RabbitTemplate.Ret
     @Override
     public void confirm(CorrelationData correlationData, boolean ack, String cause) {
         String ID = correlationData!=null? correlationData.getId() : " ";
-
+		//把我的面包还给我
         if(ack){
             log.info("交换机已经收到了消息，ID：{}",ID);
         }else {
@@ -56,6 +56,7 @@ public class MQDemo implements RabbitTemplate.ConfirmCallback,RabbitTemplate.Ret
      */
     @Override
     public void returnedMessage(ReturnedMessage returnedMessage) {
+		//把我的面包还给我
         log.error("回退消息{}",returnedMessage);
     }
 }
